@@ -1,0 +1,8 @@
+.pokemonList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pokemonImg {
+    width: 200px;
+}

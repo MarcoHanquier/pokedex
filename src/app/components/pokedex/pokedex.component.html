@@ -1,0 +1,10 @@
+
+<div class="pokemonList">
+    <div  *ngFor="let pokemon of pokemons">
+        <div *ngIf="pokemon.pokedex_id > 0" (click)="openPokemonDetails(pokemon.pokedex_id)">
+            <img class="pokemonImg" src="{{pokemon.sprites.regular}}" />
+            <h2 >{{pokemon.name.fr}}</h2>
+        </div>
+        
+     </div>
+</div>

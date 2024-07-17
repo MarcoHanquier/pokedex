@@ -1,0 +1,43 @@
+<div class="pokemonDetails">
+    <h1>{{pokemonDetails.name.fr}}</h1>
+    <p>Numéro du Pokédex : #{{pokemonDetails.pokedex_id}}</p>
+    <p>Génération : {{pokemonDetails.generation}}</p>
+    <img class="pokemonImg" src="{{pokemonDetails.sprites.regular}}" />
+    <div>Types :
+        <p *ngFor="let type of pokemonDetails.types">
+            <img class="typeImg" src="{{type.image}}" />
+            <span> {{type.name}}</span>
+        </p> 
+    </div>
+
+    <p>Taille : {{pokemonDetails.height}}</p>
+    <p>Poids : {{pokemonDetails.weight}}</p>
+    <p>Catégorie : {{pokemonDetails.category}}</p>
+
+    <h2> Stats </h2>
+    <p>PV : {{pokemonDetails.stats.hp}}</p>
+    <p>Attaque : {{pokemonDetails.stats.atk}}</p>
+    <p>Défense : {{pokemonDetails.stats.atk}}</p>
+    <p>Attaque Spéciale : {{pokemonDetails.stats.spe_atk}}</p>
+    <p>Défense Spéciale : {{pokemonDetails.stats.spe_def}}</p>
+    <p>Vitesse : {{pokemonDetails.stats.vit}}</p>
+    <p>PV : {{pokemonDetails.stats.hp}}</p>
+
+    <h2> Evolutions </h2>
+    <div *ngIf="pokemonDetails.evolution.pre != null" >
+        <div *ngFor="let evolution of pokemonDetails.evolution.pre">
+            <p> {{evolution.name}}</p>
+            <p> {{evolution.condition}}</p>
+         </div>
+    </div>
+    
+    <div *ngFor="let evolution of pokemonDetails.evolution.next">
+        <p> {{evolution.name}}</p>
+        <p> {{evolution.condition}}</p>
+     </div>
+
+    <h2> Faiblesses </h2>
+    <div *ngFor="let resistance of pokemonDetails.resistances">
+        <p *ngIf="resistance.multiplier > 1"> {{resistance.name}}</p>
+    </div>
+</div>
